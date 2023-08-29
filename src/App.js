@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import DifficultySelector from "./components/DifficultySelector";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className="app">
+      {/* Instructions */}
+      <section className="instructions">
+        <h2>Instructions</h2>
+        insert insert instructions here
+        <button>?</button>
+      </section>
+
+      <DifficultySelector/>
+
+      {/* Controls */}
+      <div className="controls">
+        <button className="nextQuestion">
+          Next Question
+        </button>
+        <button className="toggleTimer">
+          Start Timer
+        </button>
+      </div>
+
+      {/* Timer */}
+      <h2>0:00:00</h2>
+
+      {/* Question */}
+      <div className="question">
+        <h1>What is STAR Voting?</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <a href="youtube.com">[1]</a>
+          <a href="youtube.com">[2]</a>
+          <a href="youtube.com">[3]</a>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
     </div>
   );
 }
