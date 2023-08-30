@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const DifficultySelector = ({app}) => {
-    const [difficulty, setDifficulty] = useState('easy');
-
+const DifficultySelector = ({app, difficulty, setDifficulty}) => {
     useEffect(() => {
         app.current.className = `app app-${difficulty}`;
     }, [difficulty]);
