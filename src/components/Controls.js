@@ -1,22 +1,22 @@
-import React from 'react'
+import React, {useRef} from 'react'
 
-const Controls = ({interval, setInterval, setMillis}) => {
+const Controls = ({setMillis}) => {
+    const timerID = useRef(undefined);
+
     const toggleTimer = () => {
-        if(interval == undefined){
-            setInterval(
-                window.setInterval(() => {
-                    setMillis(m => m+10)
-                }, 10)
-            );
+        if(timerID.current == undefined){
+            timerID.current = window.setInterval(() => {
+                setMillis(m => m+10)
+            }, 10);
         }else{
-            clearInterval(interval);
-            setInterval(undefined);
+            clearInterval(timerID.current);
+            timerID.current = undefined;
         }
     }
 
     const nextQuestion = () => {
-        clearInterval(interval);
-        setInterval(undefined);
+        clearInterval(timerID.current);
+        timerID.current = undefined;
         setMillis(0);
     }
 
@@ -26,7 +26,7 @@ const Controls = ({interval, setInterval, setMillis}) => {
                 Next Question
             </button>
             <button className="toggleTimer" onClick={toggleTimer}>
-                {interval == undefined? 'Start Timer' : 'Stop Timer'}
+                {timerID.current == undefined? 'Start Timer' : 'Stop Timer'}
             </button>
         </div>
     )

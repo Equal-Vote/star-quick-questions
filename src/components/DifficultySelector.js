@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
-const DifficultySelector = () => {
+const DifficultySelector = ({app}) => {
     const [difficulty, setDifficulty] = useState('easy');
 
     useEffect(() => {
-        document.querySelector(".app").className = `app app-${difficulty}`;
+        app.current.className = `app app-${difficulty}`;
     }, [difficulty]);
 
     return <div className="difficulty">
