@@ -1,6 +1,12 @@
+import { useState } from 'react'
 import DifficultySelector from "./components/DifficultySelector";
+import Timer from "./components/Timer";
+import Controls from './components/Controls';
 
 function App() {
+  const [millis, setMillis] = useState(0);
+  const [interval, setInterval] = useState(undefined);
+
   return (
     <div className="app">
       {/* Instructions */}
@@ -14,21 +20,8 @@ function App() {
 
       <div className="components">
         <DifficultySelector/>
-
-        {/* Controls */}
-        <div className="controls">
-          <button className="nextQuestion">
-            Next Question
-          </button>
-          <button className="toggleTimer">
-            Start Timer
-          </button>
-        </div>
-
-        {/* Timer */}
-        <div className="timer">
-          <h2>0:00:00</h2>
-        </div>
+        <Controls interval={interval} setInterval={setInterval} setMillis={setMillis}/>
+        <Timer millis={millis}/>
 
         {/* Question */}
         <div className="question">

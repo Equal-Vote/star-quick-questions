@@ -63,6 +63,8 @@ input[type='radio']{
 
 .timer h2{
   margin: 0;
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 48px;
 }
 
 .question{
