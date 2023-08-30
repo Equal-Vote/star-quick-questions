@@ -106,12 +106,11 @@ button {
   border-radius: 4px;
   padding: 10px;
   margin: 10px;
-  border: 4px solid rgba(0, 0, 0, 0);
+  border: 2px solid rgba(0, 0, 0, 0);
 }
 
-
-button:active{
-  border: 4px solid white;
+.question a{
+  padding-right: 10px;
 }
 
 @media(max-width: 1000px){
@@ -140,6 +139,11 @@ button:active{
 
 @media(min-width: 1000px){
   button:hover{
-    background-color: rgba(0, 0, 0, .5);
+    border: 2px solid black;
   }
+}
+
+button:active{
+  background-color: rgba(0, 0, 0, .5);
+  border: 2px solid rgba(0, 0, 0, 0);
 }
