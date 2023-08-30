@@ -10,7 +10,7 @@ const DifficultySelector = () => {
     return <div className="difficulty">
         {['Easy', 'Medium', 'Hard'].map((txt) => {
             let value = txt.toLowerCase();
-            return <div key={value} className={`difficulty ${value}`}>
+            return <div key={value} className={`difficulty-option ${value}`}>
                 <label htmlFor={value}>{txt}</label>
                 <input
                     type="radio"

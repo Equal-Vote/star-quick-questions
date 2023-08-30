@@ -5,7 +5,7 @@
   --purple: #4D2586;
 }
 
-html, body, #root, .app{
+html, body, #root, .app, .components{
   margin: 0;
   height: 100%;
 }
@@ -17,10 +17,71 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.app {
+input[type='radio']{
+  margin-top: 10px;
+  /* this only affect radio buttons, I'll need to */
+  transform: scale(2);
+}
+.components {
   /* https://stackoverflow.com/questions/13573653/css-margin-terror-margin-adds-space-outside-parent-element */
   overflow: auto;
+
+  margin-left: 150px;
+  margin-right: 150px;
+
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  grid-template-rows: 50px max-content max-content auto;
+  grid-template-areas:
+    ". . ." /* it's dumb that I have to add an extra row, but using margin and padding were causing issues*/
+    "difficulty . controls"
+    ". . timer"
+    "question question question"
 }
+
+.instructions{
+  position: absolute;
+}
+
+.difficulty{
+  grid-area: difficulty;
+  display: flex;
+  flex-direction: row;
+}
+
+.controls{
+  grid-area: controls;
+}
+
+.timer{
+  grid-area: timer;
+  text-align: right;
+  margin: 10px;
+}
+
+.timer h2{
+  margin: 0;
+}
+
+.question{
+  grid-area: question;
+  margin: 10% auto auto auto;
+}
+
+.question h1{
+  margin-bottom: 0;
+}
+
+.difficulty-option{
+  margin: 10px;
+}
+
+.question, .difficulty-option{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .app-easy{
   background: var(--green);
 }

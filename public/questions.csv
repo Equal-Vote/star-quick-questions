@@ -1,0 +1,12 @@
+Timestamp,What question would you like to add?,"What's your proposed difficulty ranking for this question?
+
+(I may still apply a different ranking, but I'd still like to know 🙂 )","Can you send an example of a good answer to the question?
+
+(if you specify multiple, use separate lines)
+(if you're posting a link from youtube, right click on the video and use ""Copy video url at current time"")",Any other notes or clarifications?,Approved?
+8/29/2023 23:25:43,What is STAR Voting?,🟢Easy,https://www.youtube.com/watch?v=3-mOeUXAkV0,,TRUE
+8/29/2023 23:27:14,Does STAR guarantee a majority?,🔵Medium,https://www.youtube.com/watch?v=3-mOeUXAkV0,,TRUE
+8/29/2023 23:27:55,How will you handle legal issues of implementing STAR?,🔴Hard,"https://www.youtube.com/watch?v=3-mOeUXAkV0
+https://www.youtube.com/watch?v=3-mOeUXAkV0",,TRUE
+,a,b,c,d,FALSE
+,e,f,g,h,
