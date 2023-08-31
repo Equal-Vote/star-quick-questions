@@ -22,7 +22,13 @@ const Controls = ({setMillis, difficulty, setQuestion, allQuestions, instrHidden
 
         // question
         let questions = allQuestions.current.filter((q) => q.difficulty === difficulty);
-        setQuestion(questions[Math.floor(Math.random()*questions.length)]);
+        setQuestion(question => {
+            let q = question;
+            while(q === question && questions.length > 1){
+                q = questions[Math.floor(Math.random()*questions.length)]
+            }
+            return q;
+        });
     }
 
     return (

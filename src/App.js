@@ -28,7 +28,7 @@ function App() {
                             question: question,
                             // because unicode is weird we have to use 2 instead of 1 to slice off the emoji
                             difficulty: difficulty.substring(2).toLowerCase(),
-                            urls: urls.split('\n'),
+                            urls: (urls === '')? [] : urls.split('\n'),
                             approved: approved === 'TRUE'
                         }))
                     .filter(q => q.approved);
