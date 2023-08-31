@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 
-const Controls = ({setMillis, difficulty, setQuestion, allQuestions, instrHidden}) => {
+const Controls = ({setMillis, difficulty, question, setQuestion, allQuestions, instrHidden}) => {
     const timerID = useRef(undefined);
 
     const toggleTimer = () => {
@@ -21,14 +21,8 @@ const Controls = ({setMillis, difficulty, setQuestion, allQuestions, instrHidden
         setMillis(0);
 
         // question
-        let questions = allQuestions.current.filter((q) => q.difficulty === difficulty);
-        setQuestion(question => {
-            let q = question;
-            while(q === question && questions.length > 1){
-                q = questions[Math.floor(Math.random()*questions.length)]
-            }
-            return q;
-        });
+        let questions = allQuestions.current.filter((q) => q.difficulty === difficulty && q.question !== question);
+        setQuestion(questions[Math.floor(Math.random()*questions.length)]);
     }
 
     return (

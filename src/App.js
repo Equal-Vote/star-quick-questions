@@ -52,6 +52,7 @@ function App() {
                 />
                 <Controls
                     setMillis={setMillis}
+                    question={question}
                     setQuestion={setQuestion}
                     difficulty={difficulty}
                     allQuestions={allQuestions}
