@@ -23,6 +23,12 @@ input[type='radio']{
   transform: scale(2);
 }
 
+.app {
+  transition-property: background-color;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+}
+
 .components {
   /* https://stackoverflow.com/questions/13573653/css-margin-terror-margin-adds-space-outside-parent-element */
   overflow: auto;
@@ -38,6 +44,7 @@ input[type='radio']{
     "difficulty . controls"
     ". . timer"
     "question question question";
+
 }
 
 .instructions{
