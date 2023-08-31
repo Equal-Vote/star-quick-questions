@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 const DifficultySelector = ({app, difficulty, setDifficulty}) => {
-    useEffect(() => {
-        app.current.className = `app app-${difficulty}`;
-    }, [difficulty]);
-
     return <div className="difficulty">
         {['Easy', 'Medium', 'Hard'].map((txt) => {
             let value = txt.toLowerCase();

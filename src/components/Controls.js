@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 
-const Controls = ({setMillis, difficulty, setQuestion, allQuestions}) => {
+const Controls = ({setMillis, difficulty, setQuestion, allQuestions, instrHidden}) => {
     const timerID = useRef(undefined);
 
     const toggleTimer = () => {
@@ -27,10 +27,10 @@ const Controls = ({setMillis, difficulty, setQuestion, allQuestions}) => {
 
     return (
         <div className="controls">
-            <button className="nextQuestion" onClick={nextQuestion}>
+            <button className="nextQuestion" onClick={nextQuestion} disabled={!instrHidden}>
                 Next Question
             </button>
-            <button className="toggleTimer" onClick={toggleTimer}>
+            <button className="toggleTimer" onClick={toggleTimer} disabled={!instrHidden}>
                 {timerID.current == undefined? 'Start Timer' : 'Stop Timer'}
             </button>
         </div>

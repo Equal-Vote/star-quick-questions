@@ -7,11 +7,13 @@ import DifficultySelector from "./components/DifficultySelector";
 import Timer from "./components/Timer";
 import Controls from './components/Controls';
 import Question from './components/Question';
+import Instructions from './components/Instructions';
 
 function App() {
     const [millis, setMillis] = useState(0);
     const [question, setQuestion] = useState({});
     const [difficulty, setDifficulty] = useState('easy');
+    const [instrHidden, setInstrHidden] = useState(true);
     const appRef = useRef(null);
     const allQuestions = useRef([]);
 
@@ -39,22 +41,21 @@ function App() {
     }, [difficulty]);
 
     return (
-        <div className="app" ref={appRef}>
-            <section className="instructions">
-                {/*
-                <h2>Instructions</h2>
-                insert insert instructions here
-                */}
-                <button>?</button>
-            </section>
+        <div className={`app app-${difficulty}`} ref={appRef}>
+            <Instructions allQuestions={allQuestions} hidden={instrHidden} setHidden={setInstrHidden}/>
 
             <div className="components">
-                <DifficultySelector app={appRef} difficulty={difficulty} setDifficulty={setDifficulty}/>
+                <DifficultySelector
+                    app={appRef}
+                    difficulty={difficulty}
+                    setDifficulty={setDifficulty}
+                />
                 <Controls
                     setMillis={setMillis}
                     setQuestion={setQuestion}
                     difficulty={difficulty}
                     allQuestions={allQuestions}
+                    instrHidden={instrHidden}
                 />
                 <Timer millis={millis}/>
                 <Question question={question}/>

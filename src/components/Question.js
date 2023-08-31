@@ -1,6 +1,4 @@
 const Question = ({question}) => {
-    if ('question' in question)
-        console.log(question.urls)
     return (
         <div className="question">
             {'question' in question && <>
