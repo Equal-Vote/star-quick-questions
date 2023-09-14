@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/star-quick-questions/static/css/main.4e38bedf.css",
+    "main.js": "/star-quick-questions/static/js/main.5bdb6928.js",
+    "static/js/787.d775373f.chunk.js": "/star-quick-questions/static/js/787.d775373f.chunk.js",
+    "static/media/questions.csv": "/star-quick-questions/static/media/questions.c00e9148f283ed35e849.csv",
+    "index.html": "/star-quick-questions/index.html",
+    "main.4e38bedf.css.map": "/star-quick-questions/static/css/main.4e38bedf.css.map",
+    "main.5bdb6928.js.map": "/star-quick-questions/static/js/main.5bdb6928.js.map",
+    "787.d775373f.chunk.js.map": "/star-quick-questions/static/js/787.d775373f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e38bedf.css",
+    "static/js/main.5bdb6928.js"
+  ]
+}
