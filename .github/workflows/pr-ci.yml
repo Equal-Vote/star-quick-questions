@@ -8,10 +8,8 @@
 # Actions are pinned by commit SHA rather than tag, matching the convention
 # already used elsewhere in this org and required by the zizmor audit.
 #
-# No test step: `npm test` currently fails on the stock Create React App
-# boilerplate test "renders learn react link" (src/App.test.js), which was
-# never updated after the app stopped rendering that link. Deleting or
-# rewriting that test is enough to enable the step.
+# The test step runs a render smoke test. It needs no OpenSSL workaround --
+# that is a webpack concern, and jest does not go through webpack.
 name: PR CI
 
 "on":
@@ -54,3 +52,10 @@ jobs:
           # warnings, then drop this line to get the strict behaviour back.
           CI: "false"
         run: npm run build
+
+      - name: Test
+        # --watchAll=false explicitly, rather than depending on the CI
+        # environment variable: react-scripts drops into interactive watch
+        # mode whenever CI is unset, which would hang the job indefinitely.
+        # Being explicit keeps the step correct regardless of environment.
+        run: npm test -- --watchAll=false
